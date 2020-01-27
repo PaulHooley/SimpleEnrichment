@@ -3,17 +3,27 @@ package com.munvo.enrichment.configuration;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
-public class Configuration {
+public final class Configuration {
 
     private String studentName;
     private String type;
     private String fileName;
+    
+    private static final Configuration CONFIGURATION = new Configuration();
 
-    public Configuration() {
+    private Configuration() {
         Config config = ConfigFactory.load();
         this.studentName = config.getString("name");
         this.studentName = config.getString("type");
         this.studentName = config.getString("fileName");
+    }
+    
+    /**
+     * 
+     * @return Returns the configuration instance
+     */
+    public static Configuration getConfiguration() {
+    	return CONFIGURATION;
     }
 
     public String getStudentName() {
