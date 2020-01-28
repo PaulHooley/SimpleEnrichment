@@ -14,7 +14,7 @@ public class JSONFileReaderParser implements FileReaderParser {
         String name = conf.getString("name");
         String phone = conf.getString("phone");   
 
-        return new Subscriber(id,name,phone);
+        return new Subscriber(id, name, phone);
     }
 
 }
