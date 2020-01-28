@@ -17,11 +17,7 @@ public final class Configuration {
         this.type = config.getString("type");
         this.fileName = config.getString("fileName");
     }
-    
-    /**
-     * 
-     * @return Returns the configuration instance
-     */
+
     public static Configuration getConfiguration() {
     	return CONFIGURATION;
     }
