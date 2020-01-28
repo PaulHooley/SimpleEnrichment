@@ -6,14 +6,15 @@ import com.typesafe.config.ConfigFactory;
 
 public class JSONFileReaderParser implements FileReaderParser {
 
-	@Override
-	public Subscriber parseSubscriber(String subLine) {
-        Config conf = ConfigFactory.load(subLine);
+    @Override
+    public Subscriber parseSubscriber(String subLine) {
+        Config conf = ConfigFactory.parseString(subLine);
+        
         int id = conf.getInt("id");
         String name = conf.getString("name");
-        String phone = conf.getString("phone");
-        
-        return new Subscriber(id,name,phone);        
-	}
-	
+        String phone = conf.getString("phone");   
+
+        return new Subscriber(id,name,phone);
+    }
+
 }

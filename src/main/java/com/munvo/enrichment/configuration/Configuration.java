@@ -14,8 +14,8 @@ public final class Configuration {
     private Configuration() {
         Config config = ConfigFactory.load();
         this.studentName = config.getString("name");
-        this.studentName = config.getString("type");
-        this.studentName = config.getString("fileName");
+        this.type = config.getString("type");
+        this.fileName = config.getString("fileName");
     }
     
     /**
